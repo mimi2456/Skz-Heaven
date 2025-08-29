@@ -1,6 +1,7 @@
 const img = document.getElementById("img")
 const button = document.getElementById("button")
 
+
 let JSON_URL = "";
 
 function ChanMode() {
@@ -35,10 +36,18 @@ function showRandomImage() {
   img.src = randomUrl;
 }
 
-getElementById("All").onclick = Allmode;
-getElementById("Chan").onclick = ChanMode;
-getElementById("Changbin").onclick = ChangbinMode;
+function detectMode() {
+    const params = new URLSearchParams(window.location.search);
+    const mode = params.get("mode");
+
+    if (mode === "All") AllMode();
+    else if (mode === "Chan") ChanMode();
+    else if (mode === "Changbin") ChangbinMode();
+}
+
 button.onclick = showRandomImage;
+
+window.onload = detectMode;
 
 // Service Worker registration
 if ("serviceWorker" in navigator) {
