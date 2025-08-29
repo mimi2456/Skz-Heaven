@@ -37,7 +37,7 @@ function showRandomImage() {
 getElementById("All").onclick = Allmode;
 getElementById("Chan").onclick = ChanMode;
 getElementById("Changbin").onclick = ChangbinMode;
-
+button.onclick = showRandomImage;
 
 // Service Worker registration
 if ("serviceWorker" in navigator) {
