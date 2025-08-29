@@ -34,6 +34,12 @@ function showRandomImage() {
   img.src = randomUrl;
 }
 
+getElementById("All").onclick = Allmode;
+getElementById("Chan").onclick = ChanMode;
+getElementById("Changbin").onclick = ChangbinMode;
+
+
+// Service Worker registration
 if ("serviceWorker" in navigator) {
   navigator.serviceWorker.register("service-worker.js")
     .then(() => console.log("Service Worker registered"))
