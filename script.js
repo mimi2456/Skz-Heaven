@@ -2,8 +2,6 @@ const img = document.getElementById("img")
 const button = document.getElementById("button")
 
 
-let JSON_URL = "";
-
 function ChanMode() {
     JSON_URL = "Chan.json";
     fetchJSON(JSON_URL);
@@ -14,7 +12,7 @@ function ChangbinMode() {
     fetchJSON(JSON_URL);
 }
 
-function Allmode() {
+function AllMode() {
     JSON_URL = "All.json";
     fetchJSON(JSON_URL);
 }
@@ -36,18 +34,39 @@ function showRandomImage() {
   img.src = randomUrl;
 }
 
-function detectMode() {
-    const params = new URLSearchParams(window.location.search);
-    const mode = params.get("mode");
-
-    if (mode === "All") AllMode();
-    else if (mode === "Chan") ChanMode();
-    else if (mode === "Changbin") ChangbinMode();
+function loadMode(mode) {
+  const map = {
+    All: "All.json",
+    Chan: "Chan.json",
+    Changbin: "Changbin.json"
+  };
+  const file = map[mode] || map.All;
+  fetchJSON(file);
 }
 
-button.onclick = showRandomImage;
+document.addEventListener("DOMContentLoaded", () => {
+  const img = document.getElementById("img");
+  const button = document.getElementById("button");
 
-window.onload = detectMode;
+  const btnAll = document.getElementById("All");
+  const btnChan = document.getElementById("Chan");
+  const btnChangbin = document.getElementById("Changbin");
+
+  // We are on ModeSelect.html if those buttons exist
+  if (btnAll || btnChan || btnChangbin) {
+    if (btnAll) btnAll.addEventListener("click", () => location.href = "web.html?mode=All");
+    if (btnChan) btnChan.addEventListener("click", () => location.href = "web.html?mode=Chan");
+    if (btnChangbin) btnChangbin.addEventListener("click", () => location.href = "web.html?mode=Changbin");
+  }
+
+  // We are on web.html if image + button exist
+  if (img && button) {
+    const params = new URLSearchParams(location.search);
+    const mode = params.get("mode") || "All";
+    loadMode(mode);
+    button.addEventListener("click", showRandomImage);
+  }
+});
 
 // Service Worker registration
 if ("serviceWorker" in navigator) {
