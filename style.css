@@ -9,7 +9,7 @@ body {
 
 button {
     border-radius: 15px;
-    width: 20vh;
+    width: 20vw;
     height: 10vh;
     background-color: white;
     color: black;
@@ -20,13 +20,13 @@ button {
 
 img {
     border-radius: 20px;
-    width: 90vh;
+    max-width: 90vw;
     height: auto;
     margin-bottom: 20px;
 }
 
 #logo {
-    width: 40vh;
+    max-width: 50vw;
     height: auto;
     border-radius: 5vh;
 }
@@ -35,8 +35,5 @@ h1 {
     color: white;
     font-family: Open Sans, sans-serif;
     margin: 5vh 0 5vh 0;
-    font-size: auto;
-    text-align: center;
-    width: 90vh;
-    height: auto;
+    font-size: clamp(24px, 5vw, 48px);
 }
