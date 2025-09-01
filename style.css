@@ -38,7 +38,36 @@ h1 {
     font-size: clamp(24px, 5vw, 48px);
 }
 
-#Chan #All #Changbin {
+#Chan {
     width: 60 vw;
     height: auto;
+}
+
+#Changbin {
+    width: 60 vw;
+    height: auto
+}
+
+#All {
+    width: 60 vw;
+    height: auto;
+}
+
+#back {
+    position: absolute;
+    width: 10vw;
+    height: 5vh;
+    font-size: 2vh;
+    left: 2vw;
+    top: 2vh;
+}
+
+#ModeDisplay {
+    color: white;
+    height: 5vh;
+    width: auto;
+    font-family: Open Sans, sans-serif;
+    position: relative;
+    align-items: center;
+    font-size: 5vh;
 }

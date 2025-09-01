@@ -1,7 +1,6 @@
 const img = document.getElementById("img")
 const button = document.getElementById("button")
 
-
 function ChanMode() {
     JSON_URL = "Chan.json";
     fetchJSON(JSON_URL);
@@ -63,7 +62,9 @@ document.addEventListener("DOMContentLoaded", () => {
   if (img && button) {
     const params = new URLSearchParams(location.search);
     const mode = params.get("mode") || "All";
+    document.getElementById("ModeDisplay").innerText = `Current mode: ${mode}`;
     loadMode(mode);
+    
     button.addEventListener("click", showRandomImage);
   }
 });
