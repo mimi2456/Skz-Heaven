@@ -45,7 +45,7 @@ h1 {
 
 #Changbin {
     width: 60 vw;
-    height: auto
+    height: auto;
 }
 
 #All {
@@ -55,9 +55,9 @@ h1 {
 
 #back {
     position: absolute;
-    width: 10vw;
+    width: 20vw;
     height: 5vh;
-    font-size: 2vh;
+    font-size: auto;
     left: 2vw;
     top: 2vh;
 }
