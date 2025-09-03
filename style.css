@@ -39,25 +39,25 @@ h1 {
 }
 
 #Chan {
-    width: 60 vw;
+    width: 80%;
     height: auto;
 }
 
 #Changbin {
-    width: 60 vw;
+    width: 80%;
     height: auto;
 }
 
 #All {
-    width: 60 vw;
+    width: 80%;
     height: auto;
 }
 
 #back {
     position: absolute;
-    width: 20vw;
+    width: 20%;
     height: 5vh;
-    font-size: auto;
+    font-size: 1vh;
     left: 2vw;
     top: 2vh;
 }
