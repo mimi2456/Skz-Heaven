@@ -23,6 +23,7 @@ img {
     max-width: 90vw;
     height: auto;
     margin-bottom: 20px;
+    margin-top: 30px;
 }
 
 #logo {
@@ -69,6 +70,6 @@ h1 {
     font-family: Open Sans, sans-serif;
     position: relative;
     align-self: center;
-    font-size: 5vh;
+    font-size: 4vh;
     margin-bottom: 3vh;
 }
