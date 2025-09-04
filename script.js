@@ -11,6 +11,11 @@ function ChangbinMode() {
     fetchJSON(JSON_URL);
 }
 
+function HanMode() {
+    JSON_URL = "Han.json";
+    fetchJSON(JSON_URL);
+}
+
 function AllMode() {
     JSON_URL = "All.json";
     fetchJSON(JSON_URL);
@@ -37,7 +42,8 @@ function loadMode(mode) {
   const map = {
     All: "All.json",
     Chan: "Chan.json",
-    Changbin: "Changbin.json"
+    Changbin: "Changbin.json",
+    Han: "Han.json"
   };
   const file = map[mode] || map.All;
   fetchJSON(file);
@@ -50,12 +56,14 @@ document.addEventListener("DOMContentLoaded", () => {
   const btnAll = document.getElementById("All");
   const btnChan = document.getElementById("Chan");
   const btnChangbin = document.getElementById("Changbin");
+  const btnHan = document.getElementById("Han");
 
   // We are on ModeSelect.html if those buttons exist
   if (btnAll || btnChan || btnChangbin) {
     if (btnAll) btnAll.addEventListener("click", () => location.href = "web.html?mode=All");
     if (btnChan) btnChan.addEventListener("click", () => location.href = "web.html?mode=Chan");
     if (btnChangbin) btnChangbin.addEventListener("click", () => location.href = "web.html?mode=Changbin");
+    if (btnHan) btnHan.addEventListener("click", () => location.href = "web.html?mode=Han");
   }
 
   // We are on web.html if image + button exist

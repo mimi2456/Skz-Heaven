@@ -23,6 +23,7 @@ img {
     max-width: 90vw;
     height: auto;
     margin-bottom: 20px;
+    margin-top: 30px;
 }
 
 #logo {
@@ -38,17 +39,7 @@ h1 {
     font-size: clamp(24px, 5vw, 48px);
 }
 
-#Chan {
-    width: 80%;
-    height: auto;
-}
-
-#Changbin {
-    width: 80%;
-    height: auto;
-}
-
-#All {
+.mode {
     width: 80%;
     height: auto;
 }
@@ -69,6 +60,6 @@ h1 {
     font-family: Open Sans, sans-serif;
     position: relative;
     align-self: center;
-    font-size: 5vh;
+    font-size: 4vh;
     margin-bottom: 3vh;
 }
