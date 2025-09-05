@@ -16,6 +16,11 @@ function HanMode() {
     fetchJSON(JSON_URL);
 }
 
+function HyunjinMode() {
+    JSON_URL = "Hyunjin.json";
+    fetchJSON(JSON_URL);
+}
+
 function AllMode() {
     JSON_URL = "All.json";
     fetchJSON(JSON_URL);
@@ -43,7 +48,8 @@ function loadMode(mode) {
     All: "All.json",
     Chan: "Chan.json",
     Changbin: "Changbin.json",
-    Han: "Han.json"
+    Han: "Han.json",
+    Hyunjin: "Hyunjin.json"
   };
   const file = map[mode] || map.All;
   fetchJSON(file);
@@ -57,6 +63,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const btnChan = document.getElementById("Chan");
   const btnChangbin = document.getElementById("Changbin");
   const btnHan = document.getElementById("Han");
+  const btnHyunjin = document.getElementById("Hyunjin");
 
   // We are on ModeSelect.html if those buttons exist
   if (btnAll || btnChan || btnChangbin) {
@@ -64,6 +71,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (btnChan) btnChan.addEventListener("click", () => location.href = "web.html?mode=Chan");
     if (btnChangbin) btnChangbin.addEventListener("click", () => location.href = "web.html?mode=Changbin");
     if (btnHan) btnHan.addEventListener("click", () => location.href = "web.html?mode=Han");
+    if (btnHyunjin) btnHyunjin.addEventListener("click", () => location.href = "web.html?mode=Hyunjin");
   }
 
   // We are on web.html if image + button exist
